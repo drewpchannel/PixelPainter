@@ -1,5 +1,5 @@
 //do some variables need to be global?
-var countDiv = 0;
+var countDiv = -1;
 var currentColor;
 
 function createPaintingAbility() {

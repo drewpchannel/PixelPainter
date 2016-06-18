@@ -1,5 +1,4 @@
-
-var x = event.screenX;     // Get the horizontal coordinate
-var y = event.screenY;     // Get the vertical coordinate
-var coor = "X coords: " + x + ", Y coords: " + y;
-console.log(coor);
+function setColorCustom () {
+  var a = prompt('Enter x,y,z');
+  document.getElementById('99').style.backgroundColor = 'rgb(' + a + ')';
+}
