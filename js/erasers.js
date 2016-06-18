@@ -16,6 +16,12 @@ function erasers () {
   colorDiv.appendChild(buttonMade);
   buttonMade.setAttribute("onclick", "setColorCustom()");
   buttonMade.innerHTML = "Custom";
+
+  colorDiv = document.getElementById('colors');
+  buttonMade = document.createElement('button');
+  colorDiv.appendChild(buttonMade);
+  buttonMade.setAttribute("onclick", "trollMode()");
+  buttonMade.innerHTML = "Troll Mode";
 }
 
 var cPA = createPaintingAbility();
@@ -27,6 +33,7 @@ function erasingAll() {
     currentSquareToClear.style.backgroundColor = 'rgb(255, 255, 255)';
   }
 }
+
 function eraseSquare () {
   currentColor = '#ffffff';
 }

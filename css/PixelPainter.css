@@ -49,6 +49,26 @@ h1{
   height: 20px;
   width: 20px;
   border: 1px solid black;
+  top:2%;
+  left:0%;
+}
+
+.squares:hover{
+  -webkit-animation-name: viewIncrease;
+  -webkit-animation-duration: .5s;
+
+/*   -webkit-animation-name: spinnerRotate;
+-webkit-animation-duration: 1s;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-timing-function: linear;
+-moz-animation-name: spinnerRotate;
+-moz-animation-duration: 1s;
+-moz-animation-iteration-count: infinite;
+-moz-animation-timing-function: linear;
+-ms-animation-name: spinnerRotate;
+-ms-animation-duration: 1s;
+-ms-animation-iteration-count: infinite;
+-ms-animation-timing-function: linear; */
 }
 
 .cRows{
@@ -57,7 +77,6 @@ h1{
 
 .gridclass{
   display: inline-block;
-  background-color: #ff0000;
   border: 0px;
 
 }
@@ -71,6 +90,41 @@ h1{
 }
 
 .gRows{
-  background-color: #0000ff;
   border: 0px solid black;
+}
+
+.trollMode{
+  -webkit-animation-name: spinnerRotate;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spinnerRotate;
+  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spinnerRotate;
+  -ms-animation-duration: 1s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+}
+
+@-webkit-keyframes viewIncrease
+{
+    from{transform: scale(1 , 1);}
+    to{transform: scale(3 , 2);}
+}
+@-webkit-keyframes spinnerRotate
+{
+    from{-moz-transform:rotate(0deg);}
+    to{-moz-transform:rotate(360deg);}
+}
+@-moz-keyframes spinnerRotate
+{
+    from{-moz-transform:rotate(0deg);}
+    to{-moz-transform:rotate(360deg);}
+}
+@-ms-keyframes spinnerRotate
+{
+    from{-ms-transform:rotate(0deg);}
+    to{-ms-transform:rotate(360deg);}
 }
