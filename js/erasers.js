@@ -31,14 +31,20 @@ function erasers () {
 }
 
 var cPA = createPaintingAbility();
-function erasingAll() {
+function erasingAll(currentState) {
   for (var i = 0; i < cPA.getCountDiv(); i++){
     var whereDoesTheGridStart = cPA.getColorHeight() * cPA.getColorWidth() - 1;
     var makeId = whereDoesTheGridStart + i;
     var currentSquareToClear = document.getElementById(makeId.toString());
     currentSquareToClear.style.backgroundColor = 'rgb(255, 255, 255)';
+    Object.keys(currentState).forEach(function(key){
+      console.log(key,currentState[key]);
+      var x = document.getElementById(key);
+      x.style.backgroundColor = 'rgb(255, 255, 255)';
+  });
   }
 }
+
 
 function eraseSquare () {
   currentColor = '#ffffff';
