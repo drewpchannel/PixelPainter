@@ -22,6 +22,12 @@ function erasers () {
   colorDiv.appendChild(buttonMade);
   buttonMade.setAttribute("onclick", "trollMode()");
   buttonMade.innerHTML = "Troll Mode";
+
+  colorDiv = document.getElementById('colors');
+  buttonMade = document.createElement('button');
+  colorDiv.appendChild(buttonMade);
+  buttonMade.setAttribute("onclick", "firebaseToCheck");
+  buttonMade.innerHTML = "Test FireBAse";
 }
 
 var cPA = createPaintingAbility();

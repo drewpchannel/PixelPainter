@@ -16,11 +16,23 @@ function createPaintingAbility() {
   var _clickGrid = function(){
     this.style.backgroundColor = currentColor;
     fillOnHover = true;
+    var divClicked = this.id;
+    var myFirebaseRef = new Firebase("https://clicktesterapp.firebaseio.com/" + divClicked.toString());
+    var pixelThingToSetOnFirebase = {
+      color: currentColor
+    };
+    var db = myFirebaseRef.set(pixelThingToSetOnFirebase);
   };
 
   var _doFillOnHover = function() {
     if (fillOnHover === true){
       this.style.backgroundColor = currentColor;
+      var divClicked = this.id;
+      var myFirebaseRef = new Firebase("https://clicktesterapp.firebaseio.com/" + divClicked.toString());
+      var pixelThingToSetOnFirebase = {
+        color: currentColor
+      };
+    var db = myFirebaseRef.set(pixelThingToSetOnFirebase);
     }
   };
 
