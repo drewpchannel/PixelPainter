@@ -22,29 +22,18 @@ function erasers () {
   colorDiv.appendChild(buttonMade);
   buttonMade.setAttribute("onclick", "trollMode()");
   buttonMade.innerHTML = "Troll Mode";
-
-  colorDiv = document.getElementById('colors');
-  buttonMade = document.createElement('button');
-  colorDiv.appendChild(buttonMade);
-  buttonMade.setAttribute("onclick", "firebaseToCheck");
-  buttonMade.innerHTML = "Test FireBAse";
 }
 
 var cPA = createPaintingAbility();
-function erasingAll(currentState) {
-  for (var i = 0; i < cPA.getCountDiv(); i++){
-    var whereDoesTheGridStart = cPA.getColorHeight() * cPA.getColorWidth() - 1;
-    var makeId = whereDoesTheGridStart + i;
-    var currentSquareToClear = document.getElementById(makeId.toString());
-    currentSquareToClear.style.backgroundColor = 'rgb(255, 255, 255)';
-
-    Object.keys(currentState).forEach(function(key){
-      var x = document.getElementById(key);
-      x.style.backgroundColor = 'rgb(255, 255, 255)';
-  });
+function erasingAll() {
+  for (var i = cPA.getColorHeight() * cPA.getColorWidth() - 1; i < cPA.getCountDiv(); i++){
+    var myFirebaseRef = new Firebase("https://clicktesterapp.firebaseio.com/" + i);
+    var pixelThingToSetOnFirebase = {
+      color: '#ffffff'
+    };
+    myFirebaseRef.set(pixelThingToSetOnFirebase);
   }
 }
-
 
 function eraseSquare () {
   currentColor = '#ffffff';

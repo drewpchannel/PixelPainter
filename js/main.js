@@ -1,4 +1,3 @@
-//Div too long for colors
 window.onload = function () {
   var painterGenerator = createPaintingAbility();
   for(var i = 0; i < painterGenerator.getColorHeight(); i++){

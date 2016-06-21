@@ -56,19 +56,6 @@ h1{
 .squares:hover{
   -webkit-animation-name: viewIncrease;
   -webkit-animation-duration: .5s;
-
-/*   -webkit-animation-name: spinnerRotate;
--webkit-animation-duration: 1s;
--webkit-animation-iteration-count: infinite;
--webkit-animation-timing-function: linear;
--moz-animation-name: spinnerRotate;
--moz-animation-duration: 1s;
--moz-animation-iteration-count: infinite;
--moz-animation-timing-function: linear;
--ms-animation-name: spinnerRotate;
--ms-animation-duration: 1s;
--ms-animation-iteration-count: infinite;
--ms-animation-timing-function: linear; */
 }
 
 .cRows{
