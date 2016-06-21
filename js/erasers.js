@@ -37,8 +37,8 @@ function erasingAll(currentState) {
     var makeId = whereDoesTheGridStart + i;
     var currentSquareToClear = document.getElementById(makeId.toString());
     currentSquareToClear.style.backgroundColor = 'rgb(255, 255, 255)';
+
     Object.keys(currentState).forEach(function(key){
-      console.log(key,currentState[key]);
       var x = document.getElementById(key);
       x.style.backgroundColor = 'rgb(255, 255, 255)';
   });
