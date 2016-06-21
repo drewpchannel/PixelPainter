@@ -5,8 +5,8 @@ var currentColor;
 function createPaintingAbility() {
   var colorHeight = 20;
   var colorWidth = 5;
-  var rowHeight = 32;
-  var rowWidth = 16;
+  var rowHeight = 16;
+  var rowWidth = 32;
   var fillOnHover = false;
 
   var _clickColor = function(){
