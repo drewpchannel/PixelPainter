@@ -1,7 +1,9 @@
 var firebaseToCheck = new Firebase("https://clicktesterapp.firebaseio.com/");
 
-firebaseToCheck.on("child_changed", function (childSnapshot, dataSnapshot){
-      updatePixels(childSnapshot.val());
+firebaseToCheck.on("value", function (childSnapshot, dataSnapshot){
+  updatePixels(childSnapshot.val());
+
+
 /*      var _getCurrentChanges = function (x) {
         childSnapshot.val();
       };
@@ -12,8 +14,10 @@ firebaseToCheck.on("child_changed", function (childSnapshot, dataSnapshot){
 
 function updatePixels (currentState) {
   Object.keys(currentState).forEach(function(key){
-    console.log('this is key  ' + currentState[key]);
     var x = document.getElementById(key);
-    x.style.backgroundColor = currentState[key];
+    if ( currentState[key] !== x.style.backgroundColor ){
+      console.log('I found a color that is new');
+      x.style.backgroundColor = currentState[key];
+    } else {console.log('i found something repeated');}
   });
 }
