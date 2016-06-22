@@ -3,7 +3,6 @@ var countDiv = -1;
 var currentColor;
 
 function createPaintingAbility() {
-  //var myFirebaseRef = new Firebase("https://clicktesterapp.firebaseio.com/pixelPen");
   var colorHeight = 20;
   var colorWidth = 5;
   var rowHeight = 16;
@@ -16,7 +15,6 @@ function createPaintingAbility() {
   };
 
   var _clickGrid = function(){
-    var myFirebaseRef = new Firebase("https://clicktesterapp.firebaseio.com/pixelPen");
     this.style.backgroundColor = currentColor;
     fillOnHover = true;
     var divClicked = this.id;
@@ -28,7 +26,6 @@ function createPaintingAbility() {
 
   var _doFillOnHover = function() {
     if (fillOnHover === true){
-      var myFirebaseRef = new Firebase("https://clicktesterapp.firebaseio.com/pixelPen");
       this.style.backgroundColor = currentColor;
       var divClicked = this.id;
       var pixelThingToSetOnFirebase = {};
