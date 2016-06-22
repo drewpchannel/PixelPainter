@@ -9,6 +9,7 @@ function createPaintingAbility() {
   var rowHeight = 16;
   var rowWidth = 32;
   var fillOnHover = false;
+  var myFirebaseRef = new Firebase("https://clicktesterapp.firebaseio.com/");
 
   var _clickColor = function(){
     currentColor = this.style.backgroundColor;
@@ -19,6 +20,10 @@ function createPaintingAbility() {
     this.style.backgroundColor = currentColor;
     fillOnHover = true;
     var divClicked = this.id;
+<<<<<<< HEAD
+=======
+    divClicked = divClicked.toString();
+>>>>>>> origin
     var pixelThingToSetOnFirebase = {};
     pixelThingToSetOnFirebase[divClicked] = currentColor;
     var db = myFirebaseRef.update(pixelThingToSetOnFirebase);
