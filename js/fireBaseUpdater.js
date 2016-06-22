@@ -15,6 +15,6 @@ function updatePixels (currentState) {
   Object.keys(currentState).forEach(function(key){
     console.log('this is key  ' + key);
     var x = document.getElementById(key);
-    x.style.backgroundColor = currentState[key].color;
+    x.style.backgroundColor = currentState[key].value;
   });
 }
