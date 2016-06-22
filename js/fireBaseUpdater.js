@@ -1,7 +1,7 @@
 var firebaseToCheck = new Firebase("https://clicktesterapp.firebaseio.com/");
 
 firebaseToCheck.on("child_changed", function (childSnapshot, dataSnapshot){
-  console.log(childSnapshot);
+  console.log(childSnapshot.val());
       updatePixels(childSnapshot.val());
       var _getCurrentChanges = function (x) {
         childSnapshot.val();
