@@ -26,11 +26,13 @@ function createPaintingAbility() {
 
   var _doFillOnHover = function() {
     if (fillOnHover === true){
-      this.style.backgroundColor = currentColor;
-      var divClicked = this.id;
-      var pixelThingToSetOnFirebase = {};
-      pixelThingToSetOnFirebase[divClicked] = currentColor;
-      var db = myFirebaseRef.update(pixelThingToSetOnFirebase);
+      if ( this.style.backgroundColor !== currentColor){
+        this.style.backgroundColor = currentColor;
+        var divClicked = this.id;
+        var pixelThingToSetOnFirebase = {};
+        pixelThingToSetOnFirebase[divClicked] = currentColor;
+        var db = myFirebaseRef.update(pixelThingToSetOnFirebase);
+      }
     }
   };
 
