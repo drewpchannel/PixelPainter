@@ -20,10 +20,7 @@ function createPaintingAbility() {
     this.style.backgroundColor = currentColor;
     fillOnHover = true;
     var divClicked = this.id;
-<<<<<<< HEAD
-=======
     divClicked = divClicked.toString();
->>>>>>> origin
     var pixelThingToSetOnFirebase = {};
     pixelThingToSetOnFirebase[divClicked] = currentColor;
     var db = myFirebaseRef.update(pixelThingToSetOnFirebase);
