@@ -22,6 +22,7 @@ function createPaintingAbility() {
     var pixelThingToSetOnFirebase = {};
     pixelThingToSetOnFirebase[divClicked] = currentColor;
     var db = myFirebaseRef.update(pixelThingToSetOnFirebase);
+
   };
 
   var _doFillOnHover = function() {
@@ -101,7 +102,13 @@ function createPaintingAbility() {
   function _setCountDiv(setter) {
     countDiv = setter;
   }
-
+  function _sendRGB () {
+    var rgb = currentColor;
+    var x = rgb.substring(4, rgb.length - 1)
+      .replace (/ /g, '')
+      .split (',');
+      return x;
+  }
   return {
     clickColor: _clickColor,
     clickGrid: _clickGrid,
@@ -120,6 +127,7 @@ function createPaintingAbility() {
     getFillOnHover: _getfillOnHover,
     setFillOnHover: _setfillOnHover,
     getCurrentColor: _getcurrentColor,
-    setCurrentColor: _setcurrentColor
+    setCurrentColor: _setcurrentColor,
+    sendRGB: _sendRGB
   };
 }

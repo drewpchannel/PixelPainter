@@ -28,7 +28,8 @@ window.onload = function () {
       countDiv++;
       newCell.id = countDiv;
       newCell.className = 'gridSquares';
-
+      newCell.x = l;
+      newCell.y = k;
       newCell.addEventListener('mousedown', painterGenerator.clickGrid);
       newCell.addEventListener('mouseover', painterGenerator.doFillOnHover);
       document.getElementById('gridRows' + k).appendChild(newCell);

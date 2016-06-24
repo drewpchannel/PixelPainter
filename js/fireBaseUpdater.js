@@ -12,3 +12,12 @@ function updatePixels (currentState) {
     }
   });
 }
+
+
+
+
+
+
+
+
+
