@@ -24,18 +24,19 @@ function erasers () {
 
 var cPA = createPaintingAbility();
 function erasingAll() {
-var myFirebaseRef = new Firebase("https://clicktesterapp.firebaseio.com/");
-  for (var i = cPA.getColorHeight() * cPA.getColorWidth() - 1; i < cPA.getCountDiv(); i++){
-    //document.getElementById(i).style.backgroundColor = #ffffff;
-    var pixelThingToSetOnFirebase = {};
-    pixelThingToSetOnFirebase[i] = '#ffffff';
-    myFirebaseRef.update(pixelThingToSetOnFirebase);
+  for(var k = 0; k < painterGenerator.getRowHeight(); k++){
+    for(var l = 0; l < painterGenerator.getRowWidth(); l++){
+      var pixelThingToSetOnFirebase = {};
+      pixelThingToSetOnFirebase[l + ' ' + k] = 'rgb(255,255,255)';
+      myFirebaseRef.update(pixelThingToSetOnFirebase);
+    }
   }
-  var toCreateClear = {};
-  toCreateClear.value = true;
-  myFirebaseRef.update(toCreateClear);
 }
+/*  var toCreateClear = {};
+  toCreateClear.value = true;
+  myFirebaseRef.update(toCreateClear);*/
+//}
 
 function eraseSquare () {
-  currentColor = '#ffffff';
+  currentColor = 'rgb(255,255,255)';
 }

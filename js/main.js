@@ -1,3 +1,4 @@
+var painterGenerator = createPaintingAbility();
 window.onload = function () {
   var colorBut = document.getElementById('headerButton');
  // colorBut.innerHTML = 'Colors';
@@ -13,7 +14,6 @@ window.onload = function () {
   })
 
 
-  var painterGenerator = createPaintingAbility();
   for(var i = 0; i < painterGenerator.getColorHeight(); i++){
       var newColorRow = document.createElement('div');
       newColorRow.className = 'cRows';
