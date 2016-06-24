@@ -2,13 +2,17 @@
 var countDiv = -1;
 var currentColor;
 
+firebase.initializeApp(config);
+
+// Get a reference to the database service
+var myFirebaseRef = firebase.database().ref();
+
 function createPaintingAbility() {
   var colorHeight = 20;
   var colorWidth = 5;
   var rowHeight = 16;
   var rowWidth = 32;
   var fillOnHover = false;
-  var myFirebaseRef = new Firebase("https://clicktesterapp.firebaseio.com/");
 
   var _clickColor = function(){
     currentColor = this.style.backgroundColor;
@@ -22,7 +26,7 @@ function createPaintingAbility() {
     divClicked = divClicked.toString();
     var pixelThingToSetOnFirebase = {};
     pixelThingToSetOnFirebase[divClicked] = currentColor;
-    var db = myFirebaseRef.update(pixelThingToSetOnFirebase);
+    myFirebaseRef.update(pixelThingToSetOnFirebase);
     }
   };
 
@@ -33,7 +37,7 @@ function createPaintingAbility() {
         var divClicked = this.id;
         var pixelThingToSetOnFirebase = {};
         pixelThingToSetOnFirebase[divClicked] = currentColor;
-        var db = myFirebaseRef.update(pixelThingToSetOnFirebase);
+        myFirebaseRef.update(pixelThingToSetOnFirebase);
       }
     }
   };
