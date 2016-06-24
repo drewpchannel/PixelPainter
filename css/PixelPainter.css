@@ -118,7 +118,7 @@ h1{
   border-radius: 5px;
   padding: 5px 5px 5px 5px;
   background-color: white;
-  width:50%;
+  width:467px;
 
 }
 
@@ -143,6 +143,7 @@ h1{
   display: flex;
   justify-content: center;
   height: 20px;
+  padding: 10px 10px;
 }
 
 .gridclass{
