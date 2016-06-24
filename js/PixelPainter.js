@@ -3,8 +3,8 @@ var countDiv = -1;
 var currentColor;
 
 function createPaintingAbility() {
-  var colorHeight = 20;
-  var colorWidth = 5;
+  var colorHeight = 5;
+  var colorWidth = 20;
   var rowHeight = 16;
   var rowWidth = 32;
   var fillOnHover = false;

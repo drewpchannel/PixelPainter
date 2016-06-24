@@ -1,27 +1,25 @@
 function erasers () {
   var colorDiv = document.getElementById('colors');
-  var buttonMade = document.createElement('button');
+  var buttonMade = document.createElement('div');
   colorDiv.appendChild(buttonMade);
   buttonMade.setAttribute("onclick", "erasingAll()");
   buttonMade.innerHTML = "Clear";
+  buttonMade.className = 'funcButtons'
 
   colorDiv = document.getElementById('colors');
-  buttonMade = document.createElement('button');
+  buttonMade = document.createElement('div');
   colorDiv.appendChild(buttonMade);
   buttonMade.setAttribute("onclick", "eraseSquare()");
   buttonMade.innerHTML = "Eraser";
+  buttonMade.className = 'funcButtons'
 
-  colorDiv = document.getElementById('colors');
-  buttonMade = document.createElement('button');
-  colorDiv.appendChild(buttonMade);
-  buttonMade.setAttribute("onclick", "setColorCustom()");
-  buttonMade.innerHTML = "Custom";
+  // colorDiv = document.getElementById('colors');
+  // buttonMade = document.createElement('div');
+  // colorDiv.appendChild(buttonMade);
+  // buttonMade.setAttribute("onclick", "setColorCustom()");
+  // buttonMade.innerHTML = "Custom";
+  // buttonMade.className = 'funcButtons'
 
-  colorDiv = document.getElementById('colors');
-  buttonMade = document.createElement('button');
-  colorDiv.appendChild(buttonMade);
-  buttonMade.setAttribute("onclick", "trollMode()");
-  buttonMade.innerHTML = "Troll Mode";
 }
 
 var cPA = createPaintingAbility();
