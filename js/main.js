@@ -40,7 +40,7 @@ window.onload = function () {
       var newCell = document.createElement('div');
 
       countDiv++;
-      newCell.id = countDiv;
+      newCell.id = l + ' ' + k;
       newCell.className = 'gridSquares';
 
       newCell.x = l;

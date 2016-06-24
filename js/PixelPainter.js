@@ -1,6 +1,11 @@
 //do some variables need to be global?
 var countDiv = -1;
-var currentColor;
+var currentColor = "rgb(255,255,255)";
+
+firebase.initializeApp(config);
+
+// Get a reference to the database service
+var myFirebaseRef = firebase.database().ref();
 
 function createPaintingAbility() {
   var colorHeight = 1;
@@ -8,7 +13,6 @@ function createPaintingAbility() {
   var rowHeight = 16;
   var rowWidth = 32;
   var fillOnHover = false;
-  var myFirebaseRef = new Firebase("https://clicktesterapp.firebaseio.com/");
 
   var _clickColor = function(){
     currentColor = this.style.backgroundColor;
@@ -22,7 +26,7 @@ function createPaintingAbility() {
     divClicked = divClicked.toString();
     var pixelThingToSetOnFirebase = {};
     pixelThingToSetOnFirebase[divClicked] = currentColor;
-    var db = myFirebaseRef.update(pixelThingToSetOnFirebase);
+    myFirebaseRef.update(pixelThingToSetOnFirebase);
     }
   };
 
@@ -33,7 +37,7 @@ function createPaintingAbility() {
         var divClicked = this.id;
         var pixelThingToSetOnFirebase = {};
         pixelThingToSetOnFirebase[divClicked] = currentColor;
-        var db = myFirebaseRef.update(pixelThingToSetOnFirebase);
+        myFirebaseRef.update(pixelThingToSetOnFirebase);
       }
     }
   };
@@ -45,34 +49,34 @@ function createPaintingAbility() {
   function _getcolorHeight() {
     return colorHeight;
   }
+
   function _setcolorHeight(setter) {
     colorHeight = setter;
   }
 
-
   function _getcolorWidth() {
     return colorWidth;
   }
+
   function _setcolorWidth(setter) {
     colorWidth = setter;
   }
 
-
   function _getRowHeight() {
     return rowHeight;
   }
+
   function _setRowHeight(setter) {
     rowHeight = setter;
   }
 
-
   function _getrowWidth() {
     return rowWidth;
   }
+
   function _setrowWidth(setter) {
     rowWidth = setter;
   }
-
 
   function _getcountDiv() {
     return countDiv;
@@ -81,18 +85,18 @@ function createPaintingAbility() {
     countDiv = setter;
   }
 
-
   function _getfillOnHover() {
     return fillOnHover;
   }
+
   function _setfillOnHover(setter) {
     fillOnHover = setter;
   }
 
-
   function _getcurrentColor() {
     return getcurrentColor;
   }
+
   function _setcurrentColor(setter) {
     getcurrentColor = setter;
   }
@@ -100,9 +104,11 @@ function createPaintingAbility() {
   function _getCountDiv() {
     return countDiv;
   }
+
   function _setCountDiv(setter) {
     countDiv = setter;
   }
+
   function _sendRGB () {
     var rgb = currentColor;
     var x = rgb.substring(4, rgb.length - 1)
@@ -110,6 +116,7 @@ function createPaintingAbility() {
       .split (',');
       return x;
   }
+
   return {
     clickColor: _clickColor,
     clickGrid: _clickGrid,
