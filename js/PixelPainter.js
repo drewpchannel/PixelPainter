@@ -1,6 +1,6 @@
 //do some variables need to be global?
 var countDiv = -1;
-var currentColor;
+var currentColor = "rgb(255,255,255)";
 
 firebase.initializeApp(config);
 
