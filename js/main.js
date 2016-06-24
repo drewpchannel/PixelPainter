@@ -26,7 +26,6 @@ window.onload = function () {
         newColorCell.className = 'squares';
         newColorCell.style.backgroundColor = colorSelection[countDiv];
         newColorCell.addEventListener('click', painterGenerator.clickColor);
-        newColorCell.addEventListener('mouseup', painterGenerator.mouseUpUpdate);
         document.getElementById('rows' + i).appendChild(newColorCell);
       }
   }
@@ -44,10 +43,11 @@ window.onload = function () {
       newCell.id = countDiv;
       newCell.className = 'gridSquares';
 
-      newCell.addEventListener('touchmove', painterGenerator.doFillOnHover);
+      newCell.x = l;
+      newCell.y = k;
+
       newCell.addEventListener('mousedown', painterGenerator.clickGrid);
       newCell.addEventListener('mouseover', painterGenerator.doFillOnHover);
-      newCell.addEventListener('mouseup', painterGenerator.mouseUpUpdate);
       document.getElementById('gridRows' + k).appendChild(newCell);
     }
   document.body.addEventListener('mouseup', painterGenerator.mouseUpUpdate);

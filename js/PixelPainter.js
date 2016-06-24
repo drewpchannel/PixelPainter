@@ -8,31 +8,33 @@ function createPaintingAbility() {
   var rowHeight = 16;
   var rowWidth = 32;
   var fillOnHover = false;
+  var myFirebaseRef = new Firebase("https://clicktesterapp.firebaseio.com/");
 
   var _clickColor = function(){
     currentColor = this.style.backgroundColor;
   };
 
   var _clickGrid = function(){
-    this.style.backgroundColor = currentColor;
+    if(this.style.backgroundColor !== currentColor){
+      this.style.backgroundColor = currentColor;
     fillOnHover = true;
     var divClicked = this.id;
-    var myFirebaseRef = new Firebase("https://clicktesterapp.firebaseio.com/" + divClicked.toString());
-    var pixelThingToSetOnFirebase = {
-      color: currentColor
-    };
-    var db = myFirebaseRef.set(pixelThingToSetOnFirebase);
+    divClicked = divClicked.toString();
+    var pixelThingToSetOnFirebase = {};
+    pixelThingToSetOnFirebase[divClicked] = currentColor;
+    var db = myFirebaseRef.update(pixelThingToSetOnFirebase);
+    }
   };
 
   var _doFillOnHover = function() {
     if (fillOnHover === true){
-      this.style.backgroundColor = currentColor;
-      var divClicked = this.id;
-      var myFirebaseRef = new Firebase("https://clicktesterapp.firebaseio.com/" + divClicked.toString());
-      var pixelThingToSetOnFirebase = {
-        color: currentColor
-      };
-    var db = myFirebaseRef.set(pixelThingToSetOnFirebase);
+      if(this.style.backgroundColor !== currentColor){
+        this.style.backgroundColor = currentColor;
+        var divClicked = this.id;
+        var pixelThingToSetOnFirebase = {};
+        pixelThingToSetOnFirebase[divClicked] = currentColor;
+        var db = myFirebaseRef.update(pixelThingToSetOnFirebase);
+      }
     }
   };
 
@@ -101,7 +103,13 @@ function createPaintingAbility() {
   function _setCountDiv(setter) {
     countDiv = setter;
   }
-
+  function _sendRGB () {
+    var rgb = currentColor;
+    var x = rgb.substring(4, rgb.length - 1)
+      .replace (/ /g, '')
+      .split (',');
+      return x;
+  }
   return {
     clickColor: _clickColor,
     clickGrid: _clickGrid,
@@ -120,6 +128,7 @@ function createPaintingAbility() {
     getFillOnHover: _getfillOnHover,
     setFillOnHover: _setfillOnHover,
     getCurrentColor: _getcurrentColor,
-    setCurrentColor: _setcurrentColor
+    setCurrentColor: _setcurrentColor,
+    sendRGB: _sendRGB
   };
 }
