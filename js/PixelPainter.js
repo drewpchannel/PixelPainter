@@ -15,19 +15,20 @@ function createPaintingAbility() {
   };
 
   var _clickGrid = function(){
-    this.style.backgroundColor = currentColor;
+    if(this.style.backgroundColor !== currentColor){
+      this.style.backgroundColor = currentColor;
     fillOnHover = true;
     var divClicked = this.id;
     divClicked = divClicked.toString();
     var pixelThingToSetOnFirebase = {};
     pixelThingToSetOnFirebase[divClicked] = currentColor;
     var db = myFirebaseRef.update(pixelThingToSetOnFirebase);
-
+    }
   };
 
   var _doFillOnHover = function() {
     if (fillOnHover === true){
-      if ( this.style.backgroundColor !== currentColor){
+      if(this.style.backgroundColor !== currentColor){
         this.style.backgroundColor = currentColor;
         var divClicked = this.id;
         var pixelThingToSetOnFirebase = {};
