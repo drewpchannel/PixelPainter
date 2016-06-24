@@ -8,8 +8,8 @@ firebase.initializeApp(config);
 var myFirebaseRef = firebase.database().ref();
 
 function createPaintingAbility() {
-  var colorHeight = 20;
-  var colorWidth = 5;
+  var colorHeight = 1;
+  var colorWidth = 8;
   var rowHeight = 16;
   var rowWidth = 32;
   var fillOnHover = false;

@@ -1,4 +1,18 @@
 window.onload = function () {
+  var colorBut = document.getElementById('headerButton');
+ // colorBut.innerHTML = 'Colors';
+  var colorSwatch = document.getElementById('colors');
+
+  document.getElementById('header').appendChild(colorBut);
+  colorBut.addEventListener('click', function(){
+    if(colorSwatch.style.display === 'none'){
+      colorSwatch.style.display = 'block';
+    } else {
+      colorSwatch.style.display = 'none';
+    }
+  })
+
+
   var painterGenerator = createPaintingAbility();
   for(var i = 0; i < painterGenerator.getColorHeight(); i++){
       var newColorRow = document.createElement('div');
@@ -28,6 +42,9 @@ window.onload = function () {
       countDiv++;
       newCell.id = l + ' ' + k;
       newCell.className = 'gridSquares';
+
+      newCell.x = l;
+      newCell.y = k;
 
       newCell.addEventListener('mousedown', painterGenerator.clickGrid);
       newCell.addEventListener('mouseover', painterGenerator.doFillOnHover);
