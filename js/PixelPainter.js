@@ -49,34 +49,34 @@ function createPaintingAbility() {
   function _getcolorHeight() {
     return colorHeight;
   }
+
   function _setcolorHeight(setter) {
     colorHeight = setter;
   }
 
-
   function _getcolorWidth() {
     return colorWidth;
   }
+
   function _setcolorWidth(setter) {
     colorWidth = setter;
   }
 
-
   function _getRowHeight() {
     return rowHeight;
   }
+
   function _setRowHeight(setter) {
     rowHeight = setter;
   }
 
-
   function _getrowWidth() {
     return rowWidth;
   }
+
   function _setrowWidth(setter) {
     rowWidth = setter;
   }
-
 
   function _getcountDiv() {
     return countDiv;
@@ -85,18 +85,18 @@ function createPaintingAbility() {
     countDiv = setter;
   }
 
-
   function _getfillOnHover() {
     return fillOnHover;
   }
+
   function _setfillOnHover(setter) {
     fillOnHover = setter;
   }
 
-
   function _getcurrentColor() {
     return getcurrentColor;
   }
+
   function _setcurrentColor(setter) {
     getcurrentColor = setter;
   }
@@ -104,8 +104,17 @@ function createPaintingAbility() {
   function _getCountDiv() {
     return countDiv;
   }
+
   function _setCountDiv(setter) {
     countDiv = setter;
+  }
+
+  function _sendRGB () {
+    var rgb = currentColor;
+    var x = rgb.substring(4, rgb.length - 1)
+      .replace (/ /g, '')
+      .split (',');
+      return x;
   }
 
   return {
@@ -126,6 +135,7 @@ function createPaintingAbility() {
     getFillOnHover: _getfillOnHover,
     setFillOnHover: _setfillOnHover,
     getCurrentColor: _getcurrentColor,
-    setCurrentColor: _setcurrentColor
+    setCurrentColor: _setcurrentColor,
+    sendRGB: _sendRGB
   };
 }
