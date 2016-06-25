@@ -27,7 +27,7 @@ function erasingAll() {
   for(var k = 0; k < painterGenerator.getRowHeight(); k++){
     for(var l = 0; l < painterGenerator.getRowWidth(); l++){
       var pixelThingToSetOnFirebase = {};
-      pixelThingToSetOnFirebase[l + ' ' + k] = 'rgb(255,255,255)';
+      pixelThingToSetOnFirebase[l + ' ' + k] = 'rgb(0,0,0)';
       myFirebaseRef.update(pixelThingToSetOnFirebase);
     }
   }
@@ -38,5 +38,5 @@ function erasingAll() {
 //}
 
 function eraseSquare () {
-  currentColor = 'rgb(255,255,255)';
+  currentColor = 'rgb(0,0,0)';
 }
