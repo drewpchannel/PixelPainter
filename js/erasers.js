@@ -23,7 +23,8 @@ function erasers () {
 }
 
 var cPA = createPaintingAbility();
-function erasingAll() {
+var erasingAll = _.throttle(erasinAllSlower, 60000, { 'trailing': false });
+function erasinAllSlower() {
   for(var k = 0; k < painterGenerator.getRowHeight(); k++){
     for(var l = 0; l < painterGenerator.getRowWidth(); l++){
       var pixelThingToSetOnFirebase = {};
