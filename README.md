@@ -4,6 +4,7 @@ PixelPainter
 > Coloring pixels in a grid
 
 ![sketch](http://i.imgur.com/6kLmYWp.png)
+[Live Example]pixelmaker.devleague.com
 
 PixelPainter is a plugin that you will create. It has a color swatch of infinite colors and a grid of infinite size! When a user clicks on a color from the swatch they can paint the color on the pixel grid! There should also be two buttons, one for erasing a color and the other to clear the entire canvas.
 
